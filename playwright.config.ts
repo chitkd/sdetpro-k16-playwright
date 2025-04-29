@@ -1,6 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
+  timeout: 60 * 1000,
   testDir: './tests',
   projects: [
     {
@@ -9,6 +10,8 @@ export default defineConfig({
     }
   ],
   use: {
-    headless: false
+    headless: false,
+    baseURL: "https://the-internet.herokuapp.com/",
+    actionTimeout: 5 * 1000
   }
 })
