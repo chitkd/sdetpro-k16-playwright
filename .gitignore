@@ -1,8 +1,7 @@
 
-# Playwright
+# ignore local installed dependencies
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
 yarn.lock
+
+# Ignore test results
+/test-results/
