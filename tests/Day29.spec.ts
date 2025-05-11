@@ -85,7 +85,7 @@ test.describe('Execute JS snippet', () => {
 
         await page.waitForTimeout(3 * 1000);
 
-        await page.waitForSelector(leaderBoardFlexLoc, {timeout: 20 * 1000 });
+        await page.waitForSelector(leaderBoardFlexLoc, {timeout: 10 * 1000 });
        // scrollToBottom(page);
 
         const adParams = await getAdvertisingParams(page, adId);
