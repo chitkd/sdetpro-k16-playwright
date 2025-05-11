@@ -74,6 +74,16 @@ test.describe('Execute JS snippet', () => {
         await page.goto('https://www.foodandwine.com/');
         const adId = "leaderboard-flex-1";
         const leaderBoardFlexLoc = `#${adId}`;
+        // Scroll down a little
+        await scrollToBottom(page, 0.1);
+
+        // Click on any blank area
+        await page.mouse.click(0, 0);
+
+        // Scroll up again
+        await page.mouse.wheel(0, -100);
+
+        await page.waitForTimeout(3 * 1000);
 
         await page.waitForSelector(leaderBoardFlexLoc, {timeout: 20 * 1000 });
        // scrollToBottom(page);

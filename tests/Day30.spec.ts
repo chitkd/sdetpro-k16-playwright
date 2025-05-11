@@ -1,0 +1,43 @@
+import test from "@playwright/test";
+import LoginPageMethod01 from "../models/pages/traditional/LoginPageMethod01";
+import LoginPageMethod02 from "../models/pages/traditional/LoginPageMethod02";
+import HomePage from "../models/pages/HomePage";
+import { log } from "console";
+export interface LoginCreds{
+    username: string;
+    password: string;
+}
+
+const loginCreds: LoginCreds = {
+    username: "tomsmith",
+    password: "SuperSecretPassword!",
+};
+
+test.describe("Page Object Model - Approach 01", () => {
+    test("Login Test", async ({page}) => {
+        const loginPage = new LoginPageMethod01(page);
+        await page.goto("/login");
+        await loginPage.fillLoginForm(loginCreds);
+    })
+});
+
+test.describe("Page Object Model - Approach 02", () => {
+    test("Login Test", async ({page}) => {
+        const loginPage = new LoginPageMethod02(page);
+        await page.goto("/login");
+        await loginPage.username().fill(loginCreds.username);
+        await loginPage.password().fill(loginCreds.password);
+        await loginPage.loginButton().click();
+    })
+});
+
+test.describe("Page Object Model - Approach 03", () => {
+    test("Home Page Test", async ({page}) => {
+        await page.goto("/");
+        const homePage = new HomePage(page);
+        const footerComponent = homePage.footerComponent();
+        const powerByText = await footerComponent.powerByText();
+        console.log("Powered by text: ", powerByText);
+        
+    })
+});

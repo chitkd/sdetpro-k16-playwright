@@ -11,7 +11,8 @@ export default defineConfig({
   ],
   use: {
     headless: false,
-    baseURL: "https://the-internet.herokuapp.com/",
+    baseURL: "https://demowebshop.tricentis.com/",
+    // "https://the-internet.herokuapp.com/",
     actionTimeout: 5 * 1000
   }
 })
