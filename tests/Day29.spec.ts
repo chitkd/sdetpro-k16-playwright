@@ -75,7 +75,7 @@ test.describe('Execute JS snippet', () => {
         const adId = "leaderboard-flex-1";
         const leaderBoardFlexLoc = `#${adId}`;
 
-        await page.waitForSelector(leaderBoardFlexLoc, {timeout: 20 * 1000 });
+        await page.waitForSelector(leaderBoardFlexLoc, {timeout: 5 * 1000 });
        // scrollToBottom(page);
 
         const adParams = await getAdvertisingParams(page, adId);
