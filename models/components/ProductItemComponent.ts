@@ -5,6 +5,7 @@ export default class ProductItemComponent{
     public static readonly LOCATOR = ".product-item";
     private productTitleSelector = ".product-title";
     private productPriceSelector = ".actual-price";
+    
     constructor(private component: Locator){
         this.component = component;
     }

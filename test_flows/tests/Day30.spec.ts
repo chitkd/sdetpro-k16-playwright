@@ -1,8 +1,8 @@
 import test from "@playwright/test";
-import LoginPageMethod01 from "../models/pages/traditional/LoginPageMethod01";
-import LoginPageMethod02 from "../models/pages/traditional/LoginPageMethod02";
-import HomePage from "../models/pages/HomePage";
-import { LoginCreds } from "../types/DataType";
+import LoginPageMethod01 from "../../models/pages/traditional/LoginPageMethod01";
+import LoginPageMethod02 from "../../models/pages/traditional/LoginPageMethod02";
+import HomePage from "../../models/pages/HomePage";
+import { LoginCreds } from "../../types/DataType";
 
 const loginCreds: LoginCreds = {
     username: "tomsmith",

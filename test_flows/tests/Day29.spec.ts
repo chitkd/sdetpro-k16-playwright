@@ -1,8 +1,8 @@
 import { expect, test } from '@playwright/test';
 import { log, time } from 'console';
 import { TIMEOUT } from 'dns';
-import {getAdvertisingParams} from '../utils/AdUtils';
-import { scrollToBottom, scrollToTop } from '../utils/PageUtils';
+import {getAdvertisingParams} from '../../utils/AdUtils';
+import { scrollToBottom, scrollToTop } from '../../utils/PageUtils';
 const CUSTOM_TIMEOUT = { timeout: 15 * 1000 };
 
 test.describe('Handle Alerts', () => {
